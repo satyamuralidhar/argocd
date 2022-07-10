@@ -3,6 +3,7 @@ pipeline {
     stages { 
          stage("scm using git"){
             steps {
+                sh"git --version && sleep 2"
                 sh"git remote prune origin --dry-run"
                 //sh '''git clone https://github.com/satyamuralidhar/argocd.git'''
                 git url: 'https://github.com/satyamuralidhar/argocd.git'
